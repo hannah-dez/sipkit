@@ -1,0 +1,40 @@
+:root {
+  /* Colors */
+  --primary-purple: #593D72;
+  --primary-background: #F9F4E9;
+  --white: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-purple);
+    color: var(--white);
+    margin: 0;
+    padding: 10px;
+}
+
+nav{
+    margin: 15px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: var(--white);
+}
+
+a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+footer{
+    background-color: var(--primary-purple);
+    color: var(--white);
+    text-align: right;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
