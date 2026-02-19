@@ -29,6 +29,16 @@ a{
     text-decoration: none;
     color: var(--white);
 }
+.hero{
+    display: block; /* Custom elements are inline by default */
+  width: 100%;
+
+    background-image: url('assets/hero-image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+}
 
 footer{
     background-color: var(--primary-purple);
