@@ -2,6 +2,7 @@
   /* Colors */
   --primary-purple: #593D72;
   --purple-fade: rgba(89, 61, 114, 0.66);
+  --purple-dark: #2E203A;
   --primary-background: #F9F4E9;
   --white: white;
 }
@@ -36,33 +37,136 @@ a{
     text-decoration: none;
     color: var(--white);
 }
+
+.hero-btn{
+    padding: 20px 40px;
+    background-color: var(--white);
+    color: var(--primary-purple);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
 .hero{
-    display: block; /* Custom elements are inline by default */
+    display: flex; /* Custom elements are inline by default */
     width: 100%;
     margin: auto;
+    margin-bottom: 80px;
 
     background-image: url('assets/hero-img.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 34vh;
+    height: 40vh;
 }
-.hero div{
+.hero-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-self: center;
     color: var(--white);
     background-color: var(--purple-fade); /* Optional: Add a semi-transparent background for better text visibility */
 
-    width: 50%;
+    width: 25%;
+    padding:40px;
     margin: auto;
+    border-radius: 40px;
+    font-weight: bold;
+    text-align: center;
 }
-footer{
+
+.our-story{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding:0px;
+    width: 80%;
+    margin: auto;
+    background-color: var(--white);
+    border-radius:20px;
+
+    margin-bottom: 80px;
+}
+.story-content{
+    padding: 10px 20px;
+    height: fit-content;
+}
+
+.our-story img{
+    height: 100%;
+    margin: 0;
+}
+
+.cta-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding:0px;
+    width: 100%;
+    margin: auto;
     background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.cta-content{
+    padding: 10px 40px;
+    height: fit-content;
+}
+
+footer{
+    background-color: var(--purple-dark);
     color: var(--white);
     text-align: right;
     padding: 10px;
     display: flex;
     justify-content: flex-end;
+}
+
+/*Sipkit Products Page*/
+
+.sipkit-products{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding:0px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.info-card {
+    background-color: var(--white);
+    border-radius: 20px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 25px; /* Add your desired padding */
+    overflow: hidden; /* Keeps the image within the border-radius */
+}
+
+.info-card img {
+    width: calc(100% + 50px); /* Counteract the left + right padding */
+    margin: -25px -25px 0 -25px; /* Pull image to the edges, only top */
+    border-radius: 20px 20px 0 0; /* Match card's top corners */
+}
+
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 30%;
+}
+
+.product-card{
+    width: 20%;
+    background-color: var(--white);
+    margin: 0px;
+}
+
+.product-card img{
+    width: 100%;
 }
