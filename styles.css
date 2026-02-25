@@ -2,14 +2,34 @@
   /* Colors */
   --primary-purple: #593D72;
   --purple-fade: rgba(89, 61, 114, 0.66);
+  --purple-light: #c5a9e9;
+  --purple-lightest: #fdf7ff;
   --purple-dark: #2E203A;
   --primary-background: #F9F4E9;
   --white: white;
 }
+
+@font-face{
+    font-family: 'body-text';
+    src: url('assets/AlbertSans-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'header-text';
+    src: url('assets/ElMessiri-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'special-text';
+    src: url('assets/SansitaSwashed-VariableFont_wght.ttf') format('truetype');
+    font-weight: 700;
+}
+
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'body-text', sans-serif;
     background-color: var(--primary-background);
 
 }
@@ -21,6 +41,17 @@ header{
     margin: 0;
     padding: 10px;
     max-height: 100px;
+}
+
+h1{
+    font-family: 'special-text', serif;
+    font-size: 2.5em;
+    margin: 0px ,auto;
+    padding: 0px;
+}
+h2{
+    font-family: 'header-text', serif;
+    font-size: 1.8em;
 }
 nav{
     margin: 15px;
@@ -38,6 +69,13 @@ a{
     color: var(--white);
 }
 
+li a:hover{
+    color: var(--purple-light);
+}
+
+li a{
+    font-family: 'header-text', serif;
+}
 .hero-btn{
     padding: 20px 40px;
     background-color: var(--white);
@@ -45,6 +83,13 @@ a{
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    font-family: 'header-text', serif;
+    font-size: 1.8em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn:hover{
+    background-color: var(--purple-lightest);
 }
 .hero{
     display: flex; /* Custom elements are inline by default */
@@ -85,7 +130,6 @@ a{
     margin: auto;
     background-color: var(--white);
     border-radius:20px;
-
     margin-bottom: 80px;
 }
 .story-content{
@@ -114,6 +158,23 @@ a{
     padding: 10px 40px;
     height: fit-content;
 }
+.cta-btn{
+    padding: 10px 40px;
+    background-color: var(--white);
+    color: var(--primary-purple);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    font-family: 'header-text', serif;
+    font-size: 1.2em;
+}
+
+.cta-btn:hover{
+    background-color: var(--purple-light);
+    color: var(--white);
+}
 
 footer{
     background-color: var(--purple-dark);
@@ -125,13 +186,13 @@ footer{
 }
 
 /*Sipkit Products Page*/
-
-.sipkit-products{
+.sipkit-products {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    padding:0px;
+    align-items: stretch; /* Makes children stretch to the same height */
+    justify-content: center;
+    gap: 100px;
+    padding: 0px;
     margin: auto;
     margin-top: 40px;
 }
@@ -139,34 +200,72 @@ footer{
 .info-card {
     background-color: var(--white);
     border-radius: 20px;
-    width: 25%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 25px; /* Add your desired padding */
-    overflow: hidden; /* Keeps the image within the border-radius */
+    padding: 25px;
+    overflow: hidden;
 }
 
 .info-card img {
-    width: calc(100% + 50px); /* Counteract the left + right padding */
-    margin: -25px -25px 0 -25px; /* Pull image to the edges, only top */
-    border-radius: 20px 20px 0 0; /* Match card's top corners */
+    width: calc(100% + 50px);
+    margin: -25px -25px 0 -25px;
+    border-radius: 20px 20px 0 0;
 }
-
-.product-grid{
+.info-card h2 {
+    margin: 10px 0px;
+    font-size: 1.5em;
+    align-self: flex-start;
+}
+.product-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    width: 30%;
+    gap: 20px 40px;
+    width: 40%;
+    align-content: center; /* Vertically centers the rows within the grid's height */
 }
 
-.product-card{
-    width: 20%;
+.product-card {
     background-color: var(--white);
     margin: 0px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
 }
 
-.product-card img{
+.product-card img {
     width: 100%;
+    height: 200px; /* Adjust to your liking */
+    object-fit: cover; /* Crops the image to fill the rectangle */
+    border-radius: 10px;
+}
+
+.product-card:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*More section*/
+.more-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+    max-width: 100%;
+    margin: 0px;
+    margin-top: 80px;
+    background-color: var(--primary-purple);
+    color: var(--white);
+}
+
+.more-content{
+    width: 50%;
+}
+
+.btn-group{
+    display: flex;
+    gap: 20px;
 }
